@@ -58,8 +58,9 @@ jobs:
         path: public
     - name: Build container image
       uses: docker/build-push-action@v1
-      with: ${{github.actor}}
-      password: %{{secrets.GITHUB_TOKEN}}
-      registry: docker.pkg.github.com
-      repository: Ulysses3k/github-actions-for-packages/tic-tac-toe
-      tag_with_sha: true
+      with: 
+        username: ${{github.actor}}
+        password: ${{secrets.GITHUB_TOKEN}}
+        registry: docker.pkg.github.com
+        repository: Ulysses3k/github-actions-for-packages/tic-tac-toe
+        tag_with_sha: true
